@@ -17,4 +17,16 @@ and log into the system.
 
 
 ### Answer
-## Cent8
+#### [Cent8](https://linuxhint.com/reset-root-password-centos-8/)
+
+1. Reboot into Grub menu, press 'e' to edit
+
+2. Locate "ro" kernel parameter and replace it with "rw init=/sysroot/bin/sh"
+
+3. Ctrl + X to enter ["single-user mode"](https://www.linuxtechi.com/boot-centos-8-rhel-8-single-user-mode/)
+
+4. Mount root file system and reset root password by: 
+```
+chroot /sysroot
+passwd root
+```
